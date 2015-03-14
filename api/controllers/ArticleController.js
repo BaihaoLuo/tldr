@@ -60,6 +60,7 @@ module.exports = {
 	},
 
 	getAllArticles: function(req, res) {
+		var user = req.session.user;
 		Article.find({}).exec(function(error, articles) {
 			console.log(articles);
 			if(error) {
