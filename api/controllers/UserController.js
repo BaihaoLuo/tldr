@@ -15,13 +15,14 @@ module.exports = {
 		var email = req.param("email");
 		var password = req.param("password");
 
-		User.find({email: email}).exec(function(error, user) {
+		User.findOne({email: email}).exec(function(error, user) {
 			if(error){
 				console.log(error);
 				return res.send(400, error);
-			}
-			else {
+			}	else {
+				console.log(user);
 				var hash = user.password;
+				console.log(hash);
 
 				var bcrypt = require("bcrypt-nodejs");
 
