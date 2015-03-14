@@ -34,7 +34,13 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
+
+  '/about': {
+    view: 'about'
+  },
+
+  '/article/:id': 'ArticleController.getArticle'
 
   /***************************************************************************
   *                                                                          *
