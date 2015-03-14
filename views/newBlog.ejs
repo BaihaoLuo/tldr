@@ -1,0 +1,16 @@
+<div ng-controller="newBlogController">
+
+    <label>Submit a new blog</label>
+    <div class="form-group">
+      <label>Title</label>
+      <input class="form-control" ng-model="title"></input>
+    </div>
+    <div class="form-group">
+      <label>Body</label>
+      <textarea class="form-control" ng-model="content"></textarea>
+    </div>
+    <div class="form-group">
+      <button class="btnS btn-primary btn" ng-click="submit()">Submit</button>
+    </div>
+
+</div>
