@@ -2,10 +2,10 @@ app.controller("registerController", function($scope, $http) {
 
     $scope.register = function() {
       console.log("registering");
-      $http.post("/login", {
+      $http.post("/register", {
         email: $scope.email,
         password: $scope.password,
-        confirmPassword: $scope.confirmPassword
+        confirm: $scope.confirmPassword
       }).success(function(response) {
         console.log(response);
         location.href = "/";
