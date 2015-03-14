@@ -52,8 +52,10 @@ module.exports.routes = {
   'post /newCategory': 'CategoryController.newCategory',
   'get /getCategories' : 'CategoryController.getCategories',
 
-
   'get /article/:id': 'ArticleController.getArticle',
+
+  'get /newBlog': 'BlogController.newBlog',
+  'post /newBlog': 'BlogController.postNewBlog',
 
   /***************************************************************************
   *                                                                          *
