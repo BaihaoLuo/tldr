@@ -29,25 +29,18 @@ module.exports = {
 			return res.send(400, "Passwords do not match");
 		}
 
-		var bcrypt = require("bcrypt");
+		var bcrypt = require("bcrypt-nodejs");
 
-		bcrypt.genSalt(10, function(err, salt) {
-			if (err) return console.log(err);
-			bcrypt.hash(password, salt, function(err, hash) {
-				if (err) return console.log(err);
-				password = hash;
+		var hash = bcrypt.hashSync(password);
 
-
-				User.create({email: email, password: password}).exec(function(error, article) {
-					if(error){
-						console.log(error);
-						return res.send(400, error);
-					}
-					else {
-						console.log("Successfully created an account");
-					}
-				});
-			});
+		User.create({email: email, password: hash}).exec(function(error, article) {
+			if(error){
+				console.log(error);
+				return res.send(400, error);
+			}
+			else {
+				console.log("Successfully created an account");
+			}
 		});
 	}
 };
