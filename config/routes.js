@@ -32,7 +32,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': 'ArticleController.getAllArticlesAndBlogs',
+  '/': 'BlogController.getAllArticlesAndBlogs',
 
   '/about': {
     view: 'about'

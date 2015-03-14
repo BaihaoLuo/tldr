@@ -7,6 +7,7 @@
     padding: 8px 25px;
     display: inline;
     text-align: top;
+    color: #fff;
 }
 
 .btnS:hover,
@@ -14,8 +15,8 @@
 .btnS:active,
 .btnS.active {
     border: solid 2px #fff;
-    color: #18bc9c;
-    background: #fff;
+    color: #fff;
+    background: #46c9af;
 }
 
 .btn {
@@ -32,10 +33,26 @@
     background: #EBFCF0;
 }
 
+.navbar-nav>li>a {
+  background: #15a98c;
+  color: #fff;
+}
+
+.navbar-nav>li>a:hover {
+  background: #000;
+}
+
 .nav-stacked>li>a {
   color: #fff;
 }
 
+.nav-stacked>li:hover {
+  background: #15a98c;
+}
+
 .nav-stacked>li>a:hover {
   background: #15a98c;
+}
+.side {
+  padding-left: 2em;
 }
