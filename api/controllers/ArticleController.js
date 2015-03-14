@@ -19,7 +19,10 @@ module.exports = {
 		var descriptionTitle = req.param("descriptionTitle");
 		var description = req.param("description");
 
-		Article.create({title: title, link: link}).exec(function(error, article) {
+		Article.create({
+			title: title,
+			author: author,
+			link: link}).exec(function(error, article) {
 			if(error){
 				console.log(error);
 				return res.send(400, error);
