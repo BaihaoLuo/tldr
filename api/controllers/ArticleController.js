@@ -36,7 +36,16 @@ module.exports = {
 	},
 
 	getAllArticles: function(req, res) {
-		res.view("homepage", {});
+		Article.find({}).exec(function(error, articles) {
+			console.log(articles);
+			if(error) {
+				console.log(error);
+				res.view("homepage", {articles: []});
+			} else {
+				res.view("homepage", {articles: articles});
+			}
+		});
+
 	}
 
 };
