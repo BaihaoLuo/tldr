@@ -39,10 +39,10 @@ module.exports.routes = {
   },
 
   'get /login': 'UserController.login',
-  'post /login': 'UserController.loginPost',
+  'post /login': 'UserController.postLogin',
 
   'get /register': 'UserController.register',
-  'post /register': 'UserController.registerPost',
+  'post /register': 'UserController.postRegister',
 
   'get /newArticle': 'ArticleController.newArticle',
   'post /newArticle': 'ArticleController.postNewArticle',

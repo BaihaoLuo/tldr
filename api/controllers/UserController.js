@@ -8,14 +8,18 @@
 module.exports = {
 
 	login: function(req, res) {
-
+		return res.view("login");
 	},
 
-	loginPost: function(req, res) {
+	postLogin: function(req, res) {
 
 	},
 
 	register: function(req, res) {
+		return res.view("register");
+	},
+
+	postRegister: function(req, res) {
 		var email = req.param("email");
 		var password = req.param("password");
 		var confirm = req.param("confirm");
@@ -36,8 +40,5 @@ module.exports = {
 		});
 	}
 
-	registerPost: function(req, res) {
-
-	}
 
 };
