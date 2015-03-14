@@ -30,13 +30,67 @@
 
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/custom.css">
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
   </head>
 
   <body>
-    <%- body %>
 
+    <!-- top navigation -->
+
+  <nav class="navbar navbar-default navbar-fixed-top" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand">tldr</a>
+        </div>
+        <nav class="collapse navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#new">New</a>
+            </li>
+            <li>
+              <a href="#hot">Hot</a>
+            </li>
+            <li>
+              <a href="#bookmarks">Bookmarks</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav pull-right">
+            <li>
+              <a href="#about">Sign In</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </nav>
+
+<!-- side navigation -->
+
+    <div class="container">
+    	<div class="row">
+          <div class="col-sm-3">
+            <ul class="nav nav-stacked" id="sidebar">
+              <li><a href="#sec0">Physics</a></li>
+              <li><a href="#sec1">Chemistry</a></li>
+              <li><a href="#sec2">Biology</a></li>
+              <li><a href="#sec3">Earth and Ocean Sciences</a></li>
+            </ul>
+          </div>
+          <div class="col-md-9">
+            <%- body %>
+          </div>
+        </div>
+      </div>
 
 
     <!--
@@ -61,7 +115,7 @@
     -->
 
     <!--TEMPLATES-->
-    
+
     <!--TEMPLATES END-->
 
 
