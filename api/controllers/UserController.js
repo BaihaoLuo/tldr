@@ -67,5 +67,10 @@ module.exports = {
 				return res.send(user);
 			}
 		});
+	},
+
+	logout: function(req, res) {
+		req.session.user = null;
+		return res.view("login");
 	}
 };
