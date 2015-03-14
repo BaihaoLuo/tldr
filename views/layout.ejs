@@ -66,16 +66,16 @@
               <a href="#bookmarks">Bookmarks</a>
             </li>
             <li>
+              <a href="#about">About</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav pull-right">
+            <li>
               <a href="/newArticle">Add Article</a>
             </li>
             <li>
               <a href="/newBlog">Add Blog</a>
             </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav pull-right">
             <li>
               <% if (req.session.user == null) { %>
                 <a href="/login"><span class="btnS">Sign In</span></a>
@@ -161,7 +161,7 @@
     -->
 
     <!--TEMPLATES-->
-    
+
     <!--TEMPLATES END-->
 
 
@@ -198,6 +198,7 @@
     <script src="/js/categoryController.js"></script>
     <script src="/js/loginController.js"></script>
     <script src="/js/newArticleController.js"></script>
+    <script src="/js/newBlogController.js"></script>
     <script src="/js/registerController.js"></script>
     <!--SCRIPTS END-->
   </body>
