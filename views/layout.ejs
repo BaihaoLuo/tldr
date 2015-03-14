@@ -75,7 +75,7 @@
           <ul class="nav navbar-nav pull-right">
             <li>
               <% if (req.session.user == null) { %>
-                <a href="/login"><span class="btn">Sign In</span></a>
+                <a href="/login"><span class="btnS">Sign In</span></a>
               <% } else { %>
                 <%- req.session.user.email %>
               <% } %>
@@ -141,7 +141,7 @@
     -->
 
     <!--TEMPLATES-->
-
+    
     <!--TEMPLATES END-->
 
 
@@ -173,8 +173,11 @@
     <script src="/js/dependencies/aajquery-1.11.2.min.js"></script>
     <script src="/js/dependencies/angular.min.js"></script>
     <script src="/js/dependencies/bootstrap.min.js"></script>
-    <script src="/js/general.js"></script>
+    <script src="/js/dependencies/general.js"></script>
+    <script src="/js/articleController.js"></script>
+    <script src="/js/loginController.js"></script>
     <script src="/js/newArticleController.js"></script>
+    <script src="/js/registerController.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>
