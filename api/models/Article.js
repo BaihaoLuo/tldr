@@ -8,14 +8,10 @@
 module.exports = {
 
   attributes: {
-    id: {
-      type: "string",
-      required: "true",
-      primaryKey: true
-    },
     title: {
       type: "string",
-      required: false
+      required: false,
+      unique: true
     },
     link: {
       type: "string",

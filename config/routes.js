@@ -44,8 +44,8 @@ module.exports.routes = {
   'get /register': 'UserController.register',
   'post /register': 'UserController.registerPost',
 
-  'get /new': 'ArticleController.newArticle',
-  'post /new': 'ArticleController.postNewArticle',
+  'get /newArticle': 'ArticleController.newArticle',
+  'post /newArticle': 'ArticleController.postNewArticle',
 
   'get /article/:id': 'ArticleController.getArticle',
 

@@ -8,11 +8,21 @@
 module.exports = {
 
 	newArticle: function(req, res) {
-
+		return res.view("newArticle", {});
 	},
 
 	postNewArticle: function(req, res) {
-
+		var title = req.param("title");
+		var link = req.param("link");
+		Article.create({title: title, link: link}).exec(function(error, created) {
+			if(error){
+				console.log(error);
+				return res.send(400, {error: error});
+			} else{
+				console.log("Successfuly created article");
+				return res.send(created);
+			}
+		});
 	},
 
 	getArticle: function(req, res) {
