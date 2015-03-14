@@ -1,5 +1,5 @@
 /**
-* Article.js
+* User.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
@@ -9,28 +9,20 @@ module.exports = {
 
   attributes: {
     id: {
-      type: "string",
-      required: "true",
-      primaryKey: true
+      type: 'string',
+      primaryKey: true,
+      required: true
     },
-    title: {
-      type: "string",
-      required: false
-    },
-    link: {
+    email: {
       type: "string",
       required: true
     },
-    author: {
+    password: {
       type: "string",
-      required: false
+      required: true
     },
-    uploaded_time: {
-      type: "date",
-      required: false
-    },
-    updated_time: {
-      type: "date",
+    first_name: {
+      type: "string",
       required: false
     }
   }

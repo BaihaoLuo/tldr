@@ -15,6 +15,10 @@ module.exports = {
 			description: "description",
 			list: ["test1", "test2", "test3"]
 		});
+	},
+
+	getAllArticles: function(req, res) {
+
 	}
 
 };

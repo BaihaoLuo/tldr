@@ -32,15 +32,19 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  },
+  '/': 'ArticleController.getAllArticles',
 
   '/about': {
     view: 'about'
   },
 
-  '/article/:id': 'ArticleController.getArticle'
+  'get /login': 'UserController.login',
+  'post /login': 'UserController.loginPost',
+
+  'get /register': 'UserController.register',
+  'post /register': 'UserController.registerPost',
+
+  'get /article/:id': 'ArticleController.getArticle',
 
   /***************************************************************************
   *                                                                          *
