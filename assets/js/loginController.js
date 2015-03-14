@@ -12,4 +12,7 @@ app.controller("loginController", function($scope, $http) {
       })
     }
 
+    $scope.logout = function logout() {
+      $location.path("/");
+        }
 });

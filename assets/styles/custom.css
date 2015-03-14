@@ -53,11 +53,56 @@
 .nav-stacked>li>a:hover {
   background: #15a98c;
 }
+
 .side {
   padding-left: 2em;
 }
 
+<<<<<<< HEAD
 .hotarticle{
   height:100%;
   background: red;
+=======
+div.mainmenu {
+    z-index: 1;
+}
+
+div.menu {
+    float: left;
+    margin-top: 1em;
+    color: #fff;
+}
+
+div.mainmenu:hover {
+  background: #15a98c;
+  color: #fff;
+}
+
+
+div.menu:hover div:first-child {
+  border-bottom:
+  none;
+}
+
+div.menu div.popup {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  background: #d3d3d3;
+  width: 100%;
+  padding: 0.2em;
+}
+
+div.menu:hover div.popup {
+    display: block;
+}
+
+div.popup div, div.popup a {
+  display:block;
+  text-decoration: none;
+}
+
+.mainmenu>div:hover {
+  color: #BCEBE2;
+>>>>>>> 5d2b56361ff40202fa4ff2db10a8f6c59f73b751
 }
