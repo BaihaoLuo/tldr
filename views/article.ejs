@@ -1,4 +1,50 @@
-<div class="col-md-12">
-  <h1><%- article.title %></h1>
-  <p><%- article.link %></p>
+<div ng-controller="articleController">
+
+  <div class="col-md-12">
+    <h1><%- article.title %></h1>
+    <p><%- article.link %></p>
+    <p><%- article.author %></p>
+
+
+        <% for(var i=0; i<article.descriptions.length; i++) { %>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <li><label><%- article.descriptions[i].title %></label></li>
+            <p><%- article.descriptions[i].content %></p>
+          </div>
+        </div>
+        <% } %>
+
+    <button class="btn btn-default pull-right">Add article</button>
+    <br>
+    <br>
+    <br>
+
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form>
+            <div class="form-group">
+              <label>Summary title</label>
+              <input class="form-control" ng-model="descriptionTitle"></input>
+            </div>
+            <div class="form-group">
+              <label>Summary</label>
+              <p>You will be able to add more description sections after you submit</p>
+              <input class="form-control" ng-model="description"></input>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-default pull-right" ng-click="submit()">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 </div>
+
+<script>
+  var article = <%- JSON.stringify(article) %>;
+</script>

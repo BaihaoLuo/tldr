@@ -10,8 +10,7 @@ module.exports = {
   attributes: {
     title: {
       type: "string",
-      required: false,
-      unique: true
+      required: false
     },
     link: {
       type: "string",
@@ -21,13 +20,17 @@ module.exports = {
       type: "string",
       required: false
     },
-    uploaded_time: {
+    createdAt: {
       type: "date",
       required: false
     },
-    updated_time: {
+    updatedAt: {
       type: "date",
       required: false
+    },
+    descriptions: {
+      collection: "description",
+      via: "article"
     }
   }
 

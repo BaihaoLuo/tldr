@@ -47,6 +47,8 @@ module.exports.routes = {
   'get /newArticle': 'ArticleController.newArticle',
   'post /newArticle': 'ArticleController.postNewArticle',
 
+  'post /newDescription': 'ArticleController.newDescription',
+
   'get /article/:id': 'ArticleController.getArticle',
 
   /***************************************************************************
