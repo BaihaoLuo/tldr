@@ -56,3 +56,8 @@
 .side {
   padding-left: 2em;
 }
+
+.hotarticle{
+  height:100%;
+  background: red;
+}
