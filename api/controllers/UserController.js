@@ -12,7 +12,30 @@ module.exports = {
 	},
 
 	postLogin: function(req, res) {
+		var email = req.param("email");
+		var password = req.param("password");
 
+		User.find({email: email}).exec(function(error, user) {
+			if(error){
+				console.log(error);
+				return res.send(400, error);
+			}
+			else {
+				var hash = user.password;
+
+				var bcrypt = require("bcrypt-nodejs");
+
+				if (bcrypt.compareSync(password, hash)) {
+					console.log("Successfully logged in");
+					req.session.user = user;
+					return res.send(user);
+				}
+				else {
+					console.log("Incorrect password");
+					return res.send(400, "Incorrect password");
+				}
+			}
+		});
 	},
 
 	register: function(req, res) {
