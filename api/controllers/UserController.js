@@ -8,19 +8,19 @@
 module.exports = {
 
 	login: function(req, res) {
-
+		return res.view("login");
 	},
 
-	loginPost: function(req, res) {
+	postLogin: function(req, res) {
 
 	},
 
 	register: function(req, res) {
-
+		return res.view("register");
 	},
 
-	registerPost: function(req, res) {
-
+	postRegister: function(req, res) {
+		
 	}
 
 };
