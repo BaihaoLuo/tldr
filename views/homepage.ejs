@@ -1,5 +1,13 @@
 <% for(var i=0; i<articles.length; i++) { %>
   <div>
+   <div style="float: left;">
     <a href="/article/<%- articles[i].id %>"><%- articles[i].title %></a>
+   </div>
+
+   <div style="float: right">
+   <%- articles[i].url %>
+   </div>
+
+   <div style="clear: both;"></div>
   </div>
 <% } %>
