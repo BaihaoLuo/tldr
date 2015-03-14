@@ -23,7 +23,8 @@
     "grunt-contrib-cssmin": "~0.9.0",
     "grunt-contrib-less": "0.11.1",
     "grunt-contrib-coffee": "~0.10.1",
-    "bcrypt-nodejs": "*"
+    "bcrypt-nodejs": "*",
+    "sails-fixtures": "*"
   },
   "scripts": {
     "start": "node app.js",

@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
 <style>
-  .wrapper {min-width:500px;padding: 0 15px;}
+  .wrapper {min-width:500px; padding: 0px;}
   .navigation {position:fixed;}
 </style>
   </head>
@@ -75,7 +75,7 @@
           <ul class="nav navbar-nav pull-right">
             <li>
               <% if (req.session.user == null) { %>
-                <a href="/login"><span class="btn">Sign In</span></a>
+                <a href="/login"><span class="btnS">Sign In</span></a>
               <% } else { %>
                 <%- req.session.user.email %>
               <% } %>
@@ -85,7 +85,7 @@
       </div>
     </nav>
 
-    <div style="height: 80px"></div>
+    <div style="height: 50px"></div>
 
 
 
@@ -95,16 +95,13 @@
 
   <div class="row">
 
-    <div class="col-md-3 left">
+    <div class="col-md-3 left" ng-controller="categoryController">
 
-      <div class="navigation">
+      <div class="navigation" style="height: 100%; padding-left: 0; margin-left: 0; background: #46c9af;">
       <ul class="nav nav-stacked" id="sidebar">
-        <li><a href="#sec0">Physics</a></li>
-        <li><a href="#sec1">Chemistry</a></li>
-        <li><a href="#sec2">Biology</a></li>
-        <li><a href="#sec3">Earth and Ocean Sciences</a></li>
-
-        <div ng-controller="categoryController">
+        <h4>Categories</h4>
+        <li ng-repeat="category in categories"><a href="#sec0">{{ category.title }}</a></li>
+        <hr>
 
         <div class="col-md-12">
           <div class="panel panel-default">
@@ -122,14 +119,13 @@
           </div>
         </div>
 
-      </div>
-
       </ul>
     </div>
     </div>
 
 
     <div class="col-md-9 content">
+      <div style="height: 30px"></div>
       <%- body %>
 
     </div>
