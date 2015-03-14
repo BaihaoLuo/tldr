@@ -1,7 +1,8 @@
 app.controller("registerController", function($scope, $http) {
 
     $scope.register = function() {
-      $http.post("/postLogin", {
+      console.log("registering");
+      $http.post("/login", {
         email: $scope.email,
         password: $scope.password,
         confirmPassword: $scope.confirmPassword

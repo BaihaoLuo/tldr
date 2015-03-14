@@ -1,6 +1,6 @@
 <h1>Register</h1>
 
-<div ng-app="registerController">
+<div ng-controller="registerController">
 
   <div class="col-md-6">
     <form>
@@ -16,7 +16,7 @@
         <label>Confirm password</label>
         <input class="form-control" ng-model="confirmPassword" type="password"></input>
       </div>
-      <button class="btb btn-primary">Register</div>
+      <button class="btn btn-primary" ng-click="register()">Register</div>
     </form>
   </div>
 
