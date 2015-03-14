@@ -37,7 +37,7 @@ module.exports.routes = {
   '/about': {
     view: 'about'
   },
-
+  '/articles': 'ArticleController.getAllArticles',
   'get /login': 'UserController.login',
   'post /login': 'UserController.postLogin',
 
