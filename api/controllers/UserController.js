@@ -33,13 +33,14 @@ module.exports = {
 
 		var hash = bcrypt.hashSync(password);
 
-		User.create({email: email, password: hash}).exec(function(error, article) {
+		User.create({email: email, password: hash}).exec(function(error, user) {
 			if(error){
 				console.log(error);
 				return res.send(400, error);
 			}
 			else {
 				console.log("Successfully created an account");
+				return res.send(user);
 			}
 		});
 	}
