@@ -1,4 +1,4 @@
-.btn {
+.btnS {
     border: solid 2px #fff;
     border-radius: 20px;
     font-size: 1em;
@@ -9,11 +9,33 @@
     text-align: top;
 }
 
+.btnS:hover,
+.btnS:focus,
+.btnS:active,
+.btnS.active {
+    border: solid 2px #fff;
+    color: #18bc9c;
+    background: #fff;
+}
+
+.btn {
+  border: solid 2px  #18bc9c;
+  color:  #18bc9c;
+}
+
 .btn:hover,
 .btn:focus,
 .btn:active,
 .btn.active {
-    border: solid 2px #fff;
-    color: #18bc9c;
-    background: #fff;
+    border: solid 2px #0e705d;
+    color: #0e705d;
+    background: #EBFCF0;
+}
+
+.nav-stacked>li>a {
+  color: #fff;
+}
+
+.nav-stacked>li>a:hover {
+  background: #15a98c;
 }
