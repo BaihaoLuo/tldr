@@ -74,7 +74,11 @@
           </ul>
           <ul class="nav navbar-nav pull-right">
             <li>
-              <a href="#login"><span class="btn">Sign In</span></a>
+              <% if (req.session.user == null) { %>
+                <a href="/login"><span class="btn">Sign In</span></a>
+              <% } else { %>
+                <%- req.session.user.email %>
+              <% } %>
             </li>
           </ul>
         </nav>
@@ -101,7 +105,7 @@
         <li><a href="#sec3">Earth and Ocean Sciences</a></li>
 
         <div ng-controller="categoryController">
-          
+
         <div class="col-md-12">
           <div class="panel panel-default">
             <div class="panel-body">
@@ -193,7 +197,9 @@
     <script src="/js/dependencies/general.js"></script>
     <script src="/js/articleController.js"></script>
     <script src="/js/categoryController.js"></script>
+    <script src="/js/loginController.js"></script>
     <script src="/js/newArticleController.js"></script>
+    <script src="/js/registerController.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>
