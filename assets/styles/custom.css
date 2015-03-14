@@ -1,22 +1,19 @@
-.affix-top,.affix{
- position: static;
+.btn {
+    border: solid 2px #fff;
+    border-radius: 20px;
+    font-size: 1em;
+    background: 0 0;
+    transition: all .3s ease-in-out;
+    padding: 8px 25px;
+    display: inline;
+    text-align: top;
 }
 
-@media (min-width: 979px) {
-  #sidebar.affix-top {
-    position: static;
-  	margin-top:30px;
-  	width:228px;
-  }
-
-  #sidebar.affix {
-    position: fixed;
-    top:70px;
-    width:228px;
-  }
-}
-
-#sidebar li.active {
-  border:0 #eee solid;
-  border-right-width:5px;
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn.active {
+    border: solid 2px #fff;
+    color: #18bc9c;
+    background: #fff;
 }

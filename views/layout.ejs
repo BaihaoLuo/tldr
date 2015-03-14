@@ -33,6 +33,10 @@
     <link rel="stylesheet" href="/styles/custom.css">
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
+<style>
+  .wrapper {min-width:500px;padding: 0 15px;}
+  .navigation {position:fixed;}
+</style>
   </head>
 
   <body ng-app="app">
@@ -70,7 +74,7 @@
           </ul>
           <ul class="nav navbar-nav pull-right">
             <li>
-              <a href="#about">Sign In</a>
+              <a href="#login"><span class="btn">Sign In</span></a>
             </li>
           </ul>
         </nav>
@@ -79,23 +83,36 @@
 
     <div style="height: 80px"></div>
 
+
+
 <!-- side navigation -->
 
-    <div class="container">
-    	<div class="row">
-          <div class="col-sm-3">
-            <ul class="nav nav-stacked" id="sidebar">
-              <li><a href="#sec0">Physics</a></li>
-              <li><a href="#sec1">Chemistry</a></li>
-              <li><a href="#sec2">Biology</a></li>
-              <li><a href="#sec3">Earth and Ocean Sciences</a></li>
-            </ul>
-          </div>
-          <div class="col-md-9">
-            <%- body %>
-          </div>
-        </div>
-      </div>
+<div class="wrapper">
+
+  <div class="row">
+
+    <div class="col-md-3 left">
+
+      <div class="navigation">
+      <ul class="nav nav-stacked" id="sidebar">
+        <li><a href="#sec0">Physics</a></li>
+        <li><a href="#sec1">Chemistry</a></li>
+        <li><a href="#sec2">Biology</a></li>
+        <li><a href="#sec3">Earth and Ocean Sciences</a></li>
+      </ul>
+    </div>
+    </div>
+
+
+    <div class="col-md-9 content">
+      <%- body %>
+
+    </div>
+
+  </div>
+
+</div>
+
 
 
     <!--
