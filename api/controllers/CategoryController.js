@@ -1,31 +1,27 @@
-
-
 module.exports = {
 
-  getCategory: function(req, res) {
-		var title = req.param("title");
-		Category.findOne({title: title})
-			.exec(function(error, category) {
-				console.log(category);
+  getCategories: function(req, res) {
+		Category.find({}).exec(function(error, categories) {
+				console.log(categories);
 				if(error) {
 					console.log(error);
-					return res.view("category", {});
+					return res.send(500);
 				} else {
-					return res.view("category", {category: category});
+					return res.send(categories);
 				}
-			});
+		});
 	},
 
-    newCategory: function(req, res) {
-      var category = req.param("categoryTitle");
+  newCategory: function(req, res) {
+    var title = req.param("title");
 
-      Category.create({title: categoryTitle}).exec(function(error, category) {
-        if(error) {
-          console.log(error);
-          return res.send(error);
-        } else {
-          return res.send(category);
-        }
-      });
-    }
+    Category.create({title: title}).exec(function(error, category) {
+      if(error) {
+        console.log(error);
+        return res.send(error);
+      } else {
+        return res.send(category);
+      }
+    });
+  }
 };

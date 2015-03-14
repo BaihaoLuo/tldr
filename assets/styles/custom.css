@@ -31,3 +31,11 @@
     color: #0e705d;
     background: #EBFCF0;
 }
+
+.nav-stacked>li>a {
+  color: #fff;
+}
+
+.nav-stacked>li>a:hover {
+  background: #15a98c;
+}
