@@ -27,11 +27,14 @@ module.exports = {
 
 	getArticle: function(req, res) {
 		var id = req.param("id");
-		return res.view("article", {
-			id: id,
-			name: "Name test",
-			description: "description",
-			list: ["test1", "test2", "test3"]
+		Article.findOne({id: id}).exec(function(error, article) {
+			console.log(article);
+			if(error) {
+				console.log(error);
+				return res.view("article", {});
+			} else {
+				res.view("article", {article: article});
+			}
 		});
 	},
 
