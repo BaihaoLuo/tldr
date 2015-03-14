@@ -68,9 +68,9 @@ module.exports = {
 			console.log(articles);
 			if(error) {
 				console.log(error);
-				return res.view("homepage", {articles: []});
+				return res.view("articles", {articles: []});
 			} else {
-				return res.view("homepage", {articles: articles});
+				return res.view("articles", {articles: articles});
 			}
 		});
 

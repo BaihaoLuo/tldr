@@ -7,6 +7,11 @@ module.exports = {
       required: true
     },
 
+    user: {
+      model: "user",
+      required: true
+    },
+
     image: {
       type: "binary",
       required: false

@@ -68,20 +68,20 @@
               <a href="#bookmarks" style="color: #fff;" onMouseOver="this.style.backgroundColor='#13967c'"
               onMouseOut="this.style.backgroundColor='#15a98c'">Bookmarks</a>
             </li>
+          </ul>
+          <ul class="nav navbar-nav pull-right">
             <li>
               <a href="/newArticle" style="color: #fff;" onMouseOver="this.style.backgroundColor='#13967c'"
               onMouseOut="this.style.backgroundColor='#15a98c'">Add Article</a>
             </li>
             <li>
-            <a href="/newBlog" style="color: #fff;" onMouseOver="this.style.backgroundColor='#13967c'"
-            onMouseOut="this.style.backgroundColor='#15a98c'">Add Blog</a>
-          </li>
+              <a href="/newBlog" style="color: #fff;" onMouseOver="this.style.backgroundColor='#13967c'"
+              onMouseOut="this.style.backgroundColor='#15a98c'">Add Blog</a>
+            </li>
             <li>
               <a href="#about" style="color: #fff;" onMouseOver="this.style.backgroundColor='#13967c'"
               onMouseOut="this.style.backgroundColor='#15a98c'">About</a>
             </li>
-          </ul>
-          <ul class="nav navbar-nav pull-right">
             <li>
               <% if (req.session.user == null) { %>
                 <a href="/login"><span class="btnS">Sign In</span></a>
@@ -173,7 +173,7 @@
     -->
 
     <!--TEMPLATES-->
-
+    
     <!--TEMPLATES END-->
 
 
@@ -210,6 +210,7 @@
     <script src="/js/categoryController.js"></script>
     <script src="/js/loginController.js"></script>
     <script src="/js/newArticleController.js"></script>
+    <script src="/js/newBlogController.js"></script>
     <script src="/js/registerController.js"></script>
     <!--SCRIPTS END-->
   </body>
