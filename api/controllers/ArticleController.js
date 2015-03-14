@@ -7,6 +7,14 @@
 
 module.exports = {
 
+	newArticle: function(req, res) {
+
+	},
+
+	postNewArticle: function(req, res) {
+
+	},
+
 	getArticle: function(req, res) {
 		var id = req.param("id");
 		return res.view("article", {
@@ -18,7 +26,7 @@ module.exports = {
 	},
 
 	getAllArticles: function(req, res) {
-
+		res.view("homepage", {});
 	}
 
 };
