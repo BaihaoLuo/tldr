@@ -1,8 +1,8 @@
 <!-- blog -->
 <div class="col-md-8">
-  <p style="font-size:30px"> <strong >
-    Blogs:
-  </strong></p>
+  <p style="font-size:30px" "font-family: sans-serif">
+    Blogs
+  </p>
 
   <% for(var i=0; i<blogs.length; i++) { %>
     <a href="/blog/<%- blogs[i].id %>">
@@ -41,9 +41,9 @@
 
 <div class="col-md-4">
 
-  <p style="font-size:30px"> <strong >
-    Hot Articles:
-  </strong></p>
+  <p style="font-size:24px"; font-family:'Shift', sans-serif> 
+    Trending Articles on tldr:
+  </p>
 
   <% for(var i=0; i<articles.length; i++) { %>
 
@@ -52,13 +52,13 @@
       <div class="panel panel-default">
         <div class="panel-body">
          <div style="float: left; font-size:20px; color:black">
-          <%- articles[i].title %>
+          <%- articles[i].title %>        
          </div>
 
          <div style="clear: both;"></div>
 
-         <div style="float: left;font-size:15px; color:blue">
-           by: <%- articles[i].author %>
+         <div style="float: left;font-size:15px; color:black">
+            <%- articles[i].author %>
          </div>
          <div style="float: right; font-size:15px; color:black">
            <%- articles[i].updatedAt.toLocaleString() %>

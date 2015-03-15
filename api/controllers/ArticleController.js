@@ -93,6 +93,23 @@ module.exports = {
 				return res.send(description);
 			}
 		});
+	},
+
+	searchArticles: function(req, res) {
+		var fragment = req.param("fragment");
+		Article.find().where({
+			title: {
+				contains: fragment
+			}
+		}).exec(function(error, articles) {
+			if(error) {
+				console.log(error);
+				res.send(error);
+			} else {
+				console.log(articles);
+				res.send(articles);
+			}
+		});
 	}
 
 };

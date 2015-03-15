@@ -1,6 +1,8 @@
 <div ng-controller="newArticleController">
 
-    <label>Submit a new article</label>
+  <h1>Submit a new article</h1>
+    <hr>
+
     <div class="form-group">
       <label>Title</label>
       <input class="form-control" ng-model="title"></input>
@@ -20,10 +22,11 @@
     <div class="form-group">
       <label>Summary</label>
       <p>You will be able to add more description sections after you submit</p>
-      <input class="form-control" ng-model="description"></input>
+      <textarea class="form-control" rows="4" ng-model="description"></textarea>
+      
     </div>
     <div class="form-group">
-      <button class="btnS btn-primary btn" ng-click="submit()">Submit</button>
+      <button class="btnS btn-primary btn" ng-click="submit()"><Strong>Submit</Strong></button>
     </div>
 
 </div>
