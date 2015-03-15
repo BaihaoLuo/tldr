@@ -9,10 +9,10 @@ module.exports = {
       model: "blog",
       required: true
     },
-    title: {
-      type: "string",
+    user: {
+      model:"user",
       required: true
-    },
+    }
     updatedAt: {
       type: "date",
       required: false
