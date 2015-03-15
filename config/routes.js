@@ -63,6 +63,7 @@ module.exports.routes = {
   '/blog': 'BlogController.getAllBlogs',
   'get /getBlogComments/:id': 'CommentController.getBlogComments',
   'post /postBlogComment': 'CommentController.postBlogComment',
+  'get /getBlogSource/:id': 'BlogController.getBlogSource',
 
   'get /searchArticles/:fragment': 'ArticleController.searchArticles',
 

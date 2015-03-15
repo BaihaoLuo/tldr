@@ -7,7 +7,7 @@ module.exports = {
     },
 
     article: {
-      collection: "article"
+      model: "article"
     }
 
   }
