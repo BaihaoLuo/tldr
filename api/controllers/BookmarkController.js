@@ -13,6 +13,15 @@ module.exports = {
 		var user = User;
     var article = Article;
 
-		bookmark[key(article)];
-	}
+		user.findOne.exec (function (error, user, article) {
+			if (error) {
+				console.log(error);
+				return res.send(400, error);
+			}
+			else {
+				bookmark[key(article)];
+				console.log("Sucessfully bookmarked");
+				return res.send(article);
+			}
+		})}
 };
