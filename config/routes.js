@@ -59,6 +59,8 @@ module.exports.routes = {
 
   'get /blog/:id': 'BlogController.getBlog',
 
+  '/blog': 'BlogController.getAllBlogs',
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

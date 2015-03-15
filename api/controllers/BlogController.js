@@ -20,6 +20,20 @@ module.exports = {
 		})
 	},
 
+	getAllBlogs: function(req, res){
+		var user = req.session.user;
+		Blog.find({}).exec(function(error, blogs) {
+			if(error) {
+				console.log(error);
+				res.send(500, error);
+			} else {
+				console.log(blogs);
+				return res.view("blogs", {
+					blogs: blogs});
+			}
+		});
+	},
+
 	getAllArticlesAndBlogs: function(req, res) {
 		var user = req.session.user;
 		Article.find({}).populate("descriptions").exec(function(error, articles) {
@@ -41,7 +55,7 @@ module.exports = {
 							blogs: blogs});
 					}
 				});
-				
+
 			}
 		});
 
