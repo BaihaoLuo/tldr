@@ -8,13 +8,14 @@
   <% for(var i=0; i<blogs.length; i++) { %>
 
     <div class="row">
-      <div class="col-md-8">
+
         <% if(blogs[i].image !== null) { %>
            <div>
-             <img src=<%- blogs[i].image %> style="width:480px;height:250px">
+             <img src=<%- blogs[i].image %> style="width:600px;height:250px">
             </div>
         <% } %>
 
+        <div class="col-md-8">
         <div>
           <a href="/blog/<%- blogs[i].id %>">
             <h3><%- blogs[i].title %></h3>
@@ -27,6 +28,7 @@
       </div>
 
       <div class="grey col-md-4">
+        <br>
         <p>by: <%- blogs[i].user.email %></p>
         <p><%- blogs[i].updatedAt.toLocaleString() %></p>
       </div>
