@@ -36,7 +36,7 @@ module.exports = {
 
   getArticleComments: function(req, res) {
 		var id = req.param("id");
-		ArticleComment.find({article: id}).exec(function(error, comments) {
+		ArticleComment.find({article: id}).populate("user").exec(function(error, comments) {
 			if(error){
 				res.send(400, error);
 			} else {
@@ -47,7 +47,7 @@ module.exports = {
 
   getBlogComments: function(req, res) {
 		var id = req.param("id");
-		BlogComment.find({blog: id}).exec(function(error, comments) {
+		BlogComment.find({blog: id}).populate("user").exec(function(error, comments) {
 			if(error) {
 				res.send(400, error);
 			} else {

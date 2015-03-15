@@ -31,13 +31,6 @@
       </div>
     </div>
     <% } %>
-
-
-    <br>
-    <br>
-    <br>
-
-
     <hr>
     <div class="col-md-15">
       <div class="panel panel-default">
@@ -81,9 +74,17 @@
       <br>
       <hr>
       <div ng-repeat="comment in comments">
+        <div style="float:left; color:blue;">
+          by: {{ comment.user.email }}
+        </div>
+
+        <div style="float:right; color:black;">
+          {{comment.updatedAt.toString()}}
+        </div>
+        <div style="clear: both;"></div>
         <p>{{ comment.content }}</p>
+
         <hr>
-      <div>
     </div>
 
   </div>
