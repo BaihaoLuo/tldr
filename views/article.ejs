@@ -1,19 +1,21 @@
 <div ng-controller="articleController">
 
-  <div class="col-md-12">
+  <div class="col-md-8">
     <h1><%- article.title %>      <a href="/<%- article.link %>">
 
       <button type="button" class="btn btn-default pull-right">Original paper</button>
+
+      <div ng-controller = "BookmarkController">
+     <button type="button" class="btn btn-default pull-right" style="display: block;"
+     ng-click="bookmark()">Add to Bookmarks</button>
+     </div>
     </a></h1>
 
     <h4>Author: <%- article.author %></h4>
 
     <br>
-    <img src=<%- article.image %> style="width:250px" align="middle">
-
-
+    <img src="<%- article.image %>" style="width:250px" align="middle">
     <hr>
-    <h4>Summaries:</h4>
 
     <% for(var i=0; i<article.descriptions.length; i++) { %>
     <div class="panel panel-default">
@@ -66,10 +68,32 @@
       </div>
     </div>
 
+    <hr>
+
+    <div ng-controller="commentController">
+      <label>Join the discussion</label>
+      <textarea class="form-control" ng-model="comment"></textarea>
+      <br>
+      <button
+      class="btnS btn-primary btn pull-right"
+      ng-click="submitArticleComment()">
+        <b>Comment</b>
+      </button>
+      <br>
+      <br>
+      <hr>
+      <div ng-repeat="comment in comments">
+        <p>{{ comment.content }}</p>
+        <hr>
+      <div>
+    </div>
+
   </div>
 
 </div>
 
-<script>
-  var article = <%- JSON.stringify(article) %>;
+<script type="text/javascript">
+  var article = $.parseJSON('<%- JSON.stringify(article) %>');
+  var isArticle = true;
+  var isBlog = false;
 </script>

@@ -42,6 +42,7 @@ module.exports.routes = {
   'get /logout': 'UserController.logout',
   'get /register': 'UserController.register',
   'post /register': 'UserController.postRegister',
+  'get /bookmark': 'BookmarkController.bookmark',
 
   'get /newArticle': 'ArticleController.newArticle',
   'post /newArticle': 'ArticleController.postNewArticle',
@@ -52,14 +53,16 @@ module.exports.routes = {
   'get /getCategories' : 'CategoryController.getCategories',
 
   'get /article/:id': 'ArticleController.getArticle',
+  'get /getArticleComments/:id': 'CommentController.getArticleComments',
+  'post /postArticleComment': 'CommentController.postArticleComment',
 
   'get /newBlog': 'BlogController.newBlog',
   'post /newBlog': 'BlogController.postNewBlog',
 
   'get /blog/:id': 'BlogController.getBlog',
-
-
   '/blog': 'BlogController.getAllBlogs',
+  'get /getBlogComments/:id': 'CommentController.getBlogComments',
+  'post /postBlogComment': 'CommentController.postBlogComment',
 
   'get /searchArticles/:fragment': 'ArticleController.searchArticles',
 
