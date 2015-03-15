@@ -4,6 +4,11 @@
     <h1><%- article.title %>      <a href="/<%- article.link %>">
 
       <button type="button" class="btn btn-default pull-right">Original paper</button>
+
+      <div ng-controller = "BookmarkController">
+     <button type="button" class="btn btn-default pull-right" style="display: block;"
+     ng-click="bookmark()">Add to Bookmarks</button>
+     </div>
     </a></h1>
 
     <h4>Author: <%- article.author %></h4>

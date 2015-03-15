@@ -1,3 +1,7 @@
+body{
+
+}
+
 .btnS {
     border: solid 2px #fff;
     border-radius: 20px;
@@ -101,4 +105,8 @@ div.popup div, div.popup a {
 
 .mainmenu>div:hover {
   color: #BCEBE2
+}
+
+.grey {
+  color: #808080
 }
