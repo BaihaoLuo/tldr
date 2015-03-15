@@ -1,2 +1,32 @@
-<h1><%- blog.title %></h1>
-<p><%- blog.content %></p>
+<div class="col-mg-8">
+
+  <h1><%- blog.title %></h1>
+  <p><%- blog.content %></p>
+
+  <hr>
+
+  <div ng-controller="commentController">
+    <label>Join the discussion</label>
+    <textarea class="form-control" ng-model="comment"></textarea>
+    <br>
+    <button
+    class="btnS btn-primary btn pull-right"
+    ng-click="submitBlogComment()">
+      <b>Comment</b>
+    </button>
+    <br>
+    <br>
+    <hr>
+    <div ng-repeat="comment in comments">
+      <p>{{ comment.content }}</p>
+      <hr>
+    <div>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  var blog = $.parseJSON('<%- JSON.stringify(blog) %>');
+  var isArticle = false;
+  var isBlog = true;
+</script>
