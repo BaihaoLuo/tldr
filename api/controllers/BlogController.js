@@ -9,7 +9,8 @@ module.exports = {
 
 	getBlog: function(req, res) {
 		id = req.param("id");
-		Blog.findOne({id: id}).populate("blogSources").exec(function(error, blog) {
+		Blog.findOne({id: id}).populate("blogSources")
+		.exec(function(error, blog) {
 			if(error) {
 				console.log(error);
 				return res.send(error);
@@ -68,32 +69,54 @@ module.exports = {
 	postNewBlog: function(req, res) {
 		var title = req.param("title");
 		var content = req.param("content");
-
+		var image = req.param("image");
 		var sources = req.param("sources");
-
-		console.log(req.session.user);
 
 		Blog.create({
 			title: title,
 			content: content,
-			user: req.session.user.id
+			user: req.session.user.id,
+			image: image
 		}).exec(function(error, blog) {
 			if(error){
 				console.log(error);
 				res.send(error);
 			} else {
-				console.log(blog);
 
 				// now add the BlogSources
 				for(var i=0; i<sources.length; i++) {
 					var source = sources[i];
-					// somehow add each source to BlogSource synchronously
+					BlogSource.create({
+						blog: blog.id,
+						article: source
+					}).exec(function(error, blogSource) {
+						if(error) {
+							console.log("blogSource failed to be created");
+							console.log(error);
+						} else {
+							console.log("blogSource successfully created");
+						}
+					});
 				}
 
 				res.send(blog);
 			}
 		});
 
+	},
+
+	getBlogSource: function(req, res) {
+		var id = req.param("id");
+		BlogSource.findOne({id: id})
+		.populate("article")
+		.exec(function(error, blogSource) {
+			if(error) {
+				console.log(error);
+				return res.send(400);
+			} else {
+				return res.send(blogSource);
+			}
+		})
 	}
 
 };

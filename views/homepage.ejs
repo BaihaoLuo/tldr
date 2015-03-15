@@ -3,34 +3,39 @@
   <p style="font-size:30px" "font-family: sans-serif">
     Blogs
   </p>
+  <hr>
 
   <% for(var i=0; i<blogs.length; i++) { %>
-    <a href="/blog/<%- blogs[i].id %>">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-         <div style="float: left; font-size:40px; color:black">
-          <%- blogs[i].title %>
-          </div>
-          <div style="clear: both;"></div>
-          <div style="float: left; font-size:15px; color:blue">
-           by: <%- blogs[i].user.email %>
-           </div>
 
-         <div style="clear: both;"></div>
-         </div>
+    <div class="row">
 
-         <div style="clear: both;"></div>
+        <% if(blogs[i].image !== null) { %>
+           <div>
+             <img src=<%- blogs[i].image %> style="width:600px;height:250px">
+            </div>
+        <% } %>
 
-        <div class="panel-body">
-         <div style="float: left;font-size:18px; color:black">
+        <div class="col-md-8">
+        <div>
+          <a href="/blog/<%- blogs[i].id %>">
+            <h3><%- blogs[i].title %></h3>
+          </a>
+        </div>
+
+        <div class="grey">
           <%- blogs[i].content %>
-         </div>
-
-
-         <div style="clear: both;"></div>
         </div>
       </div>
-    </a>
+
+      <div class="grey col-md-4">
+        <br>
+        <p>by: <%- blogs[i].user.email %></p>
+        <p><%- blogs[i].updatedAt.toLocaleString() %></p>
+      </div>
+    </div>
+
+    <hr>
+
   <% } %>
 
 </div>
@@ -45,39 +50,25 @@
   <div class="panel panel-success">
     <div class="panel-heading">
       <p style="font-size:24px; color:black"; font-family:'Shift'>
-        Trending Articles on tldr:
+        Trending Articles on tldr
       </p>
 
   <% for(var i=0; i<articles.length; i++) { %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+    <label>
+      <a href="/article/<%- articles[i].id %>">
+            <%- articles[i].title %>
+      </a>
+    </label>
 
-    <a href="/article/<%- articles[i].id %>">
+    <div class="grey">
+      <p>by:<%- articles[i].author %></p>
+      <p><%- articles[i].updatedAt.toLocaleString() %></p>
+    </div>
 
-      <div class="panel panel-default">
-        <div class="panel-body">
-         <div style="float: left; font-size:20px; color:black">
-          <%- articles[i].title %>
-         </div>
-
-         <div style="clear: both;"></div>
-
-         <div style="float: left;font-size:15px; color:blue">
-            by:<%- articles[i].author %>
-         </div>
-
-         <div style="float: right;font-size:15px; color:black">
-            <img src=<%- articles[i].image %> style="width:48px;height:48px">
-         </div>
-
-         <div style="float: right; font-size:15px; color:black">
-           <%- articles[i].updatedAt.toLocaleString() %>
-         </div>
-
-
-         <div style="clear: both;"></div>
-        </div>
-      </div>
-
-    </a>
+  </div>
+  </div>
 
   <% } %>
 

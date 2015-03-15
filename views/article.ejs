@@ -1,19 +1,23 @@
 <div ng-controller="articleController">
 
-  <div class="col-md-12">
+  <div class="col-md-8">
     <h1><%- article.title %>      <a href="/<%- article.link %>">
 
       <button type="button" class="btn btn-default pull-right">Original paper</button>
+
+     <a href="/bookmark/<%- article.id %>">
+     <button type="button" class="btn btn-default pull-right" style="display: block;">
+     Add to Bookmarks</button></a>
     </a></h1>
 
     <h4>Author: <%- article.author %></h4>
 
-    <br>
-    <img src=<%- article.image %> style="width:250px" align="middle">
-
+    <% if(article.image !== null){ %>
+      <br>
+      <img src="<%- article.image %>" style="width:250px" align="middle">
+    <% } %>
 
     <hr>
-    <h4>Summaries:</h4>
 
     <% for(var i=0; i<article.descriptions.length; i++) { %>
     <div class="panel panel-default">
@@ -31,13 +35,6 @@
       </div>
     </div>
     <% } %>
-
-
-    <br>
-    <br>
-    <br>
-
-
     <hr>
     <div class="col-md-15">
       <div class="panel panel-default">
@@ -66,10 +63,40 @@
       </div>
     </div>
 
+    <hr>
+
+    <div ng-controller="commentController">
+      <label>Join the discussion</label>
+      <textarea class="form-control" ng-model="comment"></textarea>
+      <br>
+      <button
+      class="btnS btn-primary btn pull-right"
+      ng-click="submitArticleComment()">
+        <b>Comment</b>
+      </button>
+      <br>
+      <br>
+      <hr>
+      <div ng-repeat="comment in comments">
+        <div style="float:left; color:blue;">
+          by: {{ comment.user.email }}
+        </div>
+
+        <div style="float:right; color:black;">
+          {{comment.updatedAt.toString()}}
+        </div>
+        <div style="clear: both;"></div>
+        <p>{{ comment.content }}</p>
+
+        <hr>
+    </div>
+
   </div>
 
 </div>
 
-<script>
-  var article = <%- JSON.stringify(article) %>;
+<script type="text/javascript">
+  var article = $.parseJSON('<%- JSON.stringify(article) %>');
+  var isArticle = true;
+  var isBlog = false;
 </script>

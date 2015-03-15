@@ -145,6 +145,6 @@ module.exports = {
 				res.send(articles);
 			}
 		});
-	}
+	},
 
 };

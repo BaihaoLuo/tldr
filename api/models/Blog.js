@@ -13,7 +13,7 @@ module.exports = {
     },
 
     image: {
-      type: "binary",
+      type: "string",
       required: false
     },
 

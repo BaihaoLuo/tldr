@@ -1,29 +1,38 @@
 <!-- blogs -->
 
+<div class="col-md-8">
+  <% for(var i=0; i<blogs.length; i++) { %>
 
-<% for(var i=0; i<blogs.length; i++) { %>
+    <div class="row">
 
-  <a href="/blog/<%- blogs[i].id %>">
+        <% if(blogs[i].image !== null) { %>
+           <div>
+             <img src=<%- blogs[i].image %> style="width:480px;height:250px">
+            </div>
+        <% } %>
+        <div class="col-md-8">
 
-<div class="panel panel-default">
-  <div class="panel-body">
-   <div style="float: left; font-size:20px; color:black">
-    <%- blogs[i].title %>
-   </div>
+        <div>
+          <a href="/blog/<%- blogs[i].id %>">
+            <h3><%- blogs[i].title %></h3>
+          </a>
+        </div>
 
-   <div style="clear: both;"></div>
+        <div class="grey">
+          <%- blogs[i].content %>
+        </div>
+      </div>
 
-   <div style="float: left;font-size:15px; color:blue">
-     by: <%- blogs[i].user.email %>
-   </div>
+      <div class="grey col-md-4">
+        <br>
+        <p>by: <%- blogs[i].user.email %></p>
+        <p><%- blogs[i].updatedAt.toLocaleString() %></p>
+      </div>
+    </div>
 
-   <div style="float: right; font-size:15px; color:black">
-     <%- blogs[i].updatedAt.toLocaleString() %>
-   </div>
-   <div style="clear: both;"></div>
-  </div>
+    <hr>
+
+  <% } %>
 </div>
-</a>
-<% } %>
 
 <!-- blogs -->

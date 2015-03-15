@@ -1,5 +1,5 @@
 <div ng-controller="newBlogController" ng-init="blogSources=[]">
-
+  <div class="col-md-8">
     <h1>Submit a new blog post</h1>
     <hr>
 
@@ -8,8 +8,8 @@
       <input class="form-control" ng-model="title"></input>
     </div>
 
-    
-      
+
+
 
       <div class="row">
       <div class="col-md-6">
@@ -31,7 +31,7 @@
           <a ng-click="addBlogSource($index)">{{ article.title }}</a>
         </li>
         <br>
-   
+
       </div>
 
     <div class="col-md-12">
@@ -39,9 +39,14 @@
         <label>Body</label>
         <textarea class="form-control" rows="4" ng-model="content"></textarea>
       <br>
-      
+      <div class="form-group">
+        <label>Image URL</label>
+        <input class="form-control" ng-model="image"></input>
+      </div>
+
       <button class="btnS btn-primary btn" ng-click="submit()">Submit</button>
     </div>
     </div>
+  </div>
 
 </div>
