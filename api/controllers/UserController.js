@@ -71,6 +71,6 @@ module.exports = {
 
 	logout: function(req, res) {
 		req.session.user = null;
-		return res.view("login");
+		return res.redirect("/");
 	}
 };
