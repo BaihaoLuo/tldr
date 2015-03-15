@@ -52,9 +52,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          
           <a href="/" class="navbar-brand" style="color: #fff;" onMouseOver="this.style.backgroundColor='#13967c'"
-          onMouseOut="this.style.backgroundColor='#15a98c'">tldr</a>
+          onMouseOut="this.style.backgroundColor='#15a98c'"><b>tldr</b></a>
         </div>
+
         <nav class="collapse navbar-collapse" role="navigation">
           <ul class="nav navbar-nav">
             <li>
@@ -63,8 +65,10 @@
             </li>
             <li>
               <a href="#hot" style="color: #fff;" onMouseOver="this.style.backgroundColor='#13967c'"
-              onMouseOut="this.style.backgroundColor='#15a98c'">Hot</a>
+              onMouseOut="this.style.backgroundColor='#15a98c'">
+              Trending</a>
             </li>
+           
             <li>
               <a href="#bookmarks" style="color: #fff;" onMouseOver="this.style.backgroundColor='#13967c'"
               onMouseOut="this.style.backgroundColor='#15a98c'">Bookmarks</a>
@@ -87,8 +91,9 @@
               <a href="/newBlog" style="color: #fff;" onMouseOver="this.style.backgroundColor='#13967c'"
               onMouseOut="this.style.backgroundColor='#15a98c'">Add Blog</a>
             </li>
+            
             <li>
-              <a href="#about" style="color: #fff;" onMouseOver="this.style.backgroundColor='#13967c'"
+              <a href="/about" style="color: #fff;" onMouseOver="this.style.backgroundColor='#13967c'"
               onMouseOut="this.style.backgroundColor='#15a98c'">About</a>
             </li>
             <li>
@@ -130,6 +135,9 @@
         <div ng-controller="categoryController">
 
 <div class="col-md-12">
+  <div class ="thumbnail">
+        <img src="http://goo.gl/W52Hzm"/>
+      </div>
   <div class="panel panel-default">
     <div class="panel-body">
       <form>
@@ -141,8 +149,13 @@
           <button class="btn btn-default pull-right" ng-click="submit()">Submit</button>
         </div>
       </form>
+      
     </div>
   </div>
+  <br>
+  <br>
+
+  
 </div>
 
 </div>
@@ -158,6 +171,10 @@
     </div>
 
   </div>
+
+
+
+  
 
 
     <!--

@@ -4,12 +4,21 @@
     <h1><%- article.title %>      <a href="/<%- article.link %>">
 
       <button type="button" class="btn btn-default pull-right">Original paper</button>
+
+      <div ng-controller = "BookmarkController">
+     <a href="/bookmark/<%- article.id %>">
+     <button type="button" class="btn btn-default pull-right" style="display: block;">
+     Add to Bookmarks</button></a>
+     </div>
     </a></h1>
 
     <h4>Author: <%- article.author %></h4>
 
-    <br>
-    <img src="<%- article.image %>" style="width:250px" align="middle">
+    <% if(article.image !== null){ %>
+      <br>
+      <img src="<%- article.image %>" style="width:250px" align="middle">
+    <% } %>
+
     <hr>
 
     <% for(var i=0; i<article.descriptions.length; i++) { %>
@@ -28,13 +37,6 @@
       </div>
     </div>
     <% } %>
-
-
-    <br>
-    <br>
-    <br>
-
-
     <hr>
     <div class="col-md-15">
       <div class="panel panel-default">
@@ -78,9 +80,17 @@
       <br>
       <hr>
       <div ng-repeat="comment in comments">
+        <div style="float:left; color:blue;">
+          by: {{ comment.user.email }}
+        </div>
+
+        <div style="float:right; color:black;">
+          {{comment.updatedAt.toString()}}
+        </div>
+        <div style="clear: both;"></div>
         <p>{{ comment.content }}</p>
+
         <hr>
-      <div>
     </div>
 
   </div>
