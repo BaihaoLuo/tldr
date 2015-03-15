@@ -18,8 +18,16 @@
     <br>
     <hr>
     <div ng-repeat="comment in comments">
+      <div style="float:left; color:blue;">
+        by: {{ comment.user.email }}
+      </div>
+
+      <div style="float:right; color:black;">
+        {{comment.updatedAt.toString()}}
+      </div>
+      <div style="clear: both;"></div>
       <p>{{ comment.content }}</p>
-      <hr>
+    <hr>
     <div>
   </div>
 
