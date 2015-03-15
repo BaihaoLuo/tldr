@@ -41,7 +41,7 @@ module.exports = {
 							blogs: blogs});
 					}
 				});
-				
+
 			}
 		});
 
@@ -55,6 +55,8 @@ module.exports = {
 		var title = req.param("title");
 		var content = req.param("content");
 
+		var sources = req.param("sources");
+
 		console.log(req.session.user);
 
 		Blog.create({
@@ -67,6 +69,13 @@ module.exports = {
 				res.send(error);
 			} else {
 				console.log(blog);
+
+				// now add the BlogSources
+				for(var i=0; i<sources.length; i++) {
+					var source = sources[i];
+					// somehow add each source to BlogSource synchronously
+				}
+
 				res.send(blog);
 			}
 		});

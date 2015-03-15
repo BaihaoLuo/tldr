@@ -1,4 +1,4 @@
-<div ng-controller="newBlogController">
+<div ng-controller="newBlogController" ng-init="blogSources=[]">
 
     <h1>Submit a new blog</h1>
     <hr>
@@ -7,6 +7,29 @@
       <label>Title</label>
       <input class="form-control" ng-model="title"></input>
     </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <label>Current sources</label>
+        <li ng-repeat="article in blogSources">
+          {{ article.title }}
+        </li>
+      </div>
+      <div class="col-md-6">
+        <label>Add sources</label>
+        <input type="text" ng-model="article"
+          placeholder="Articles loaded via $http"
+          typeahead="article for article in searchArticles($viewValue)"
+          typeahead-loading="loadingArticles"
+          class="form-control">
+        <br>
+        <li ng-repeat="article in searchedArticles">
+          <a ng-click="addBlogSource($index)">{{ article.title }}</a>
+        </li>
+        <br>
+      </div>
+    <div>
+
     <div class="form-group">
       <label>Body</label>
       <textarea class="form-control" ng-model="content"></textarea>
