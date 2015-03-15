@@ -43,6 +43,7 @@ module.exports.routes = {
   'get /logout': 'UserController.logout',
   'get /register': 'UserController.register',
   'post /register': 'UserController.postRegister',
+  'get /bookmark': 'BookmarkController.bookmark',
 
   'get /newArticle': 'ArticleController.newArticle',
   'post /newArticle': 'ArticleController.postNewArticle',
