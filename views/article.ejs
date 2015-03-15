@@ -2,25 +2,27 @@
 
   <div class="col-md-12">
     <h1><%- article.title %>      <a href="/<%- article.link %>">
-      
+
       <button type="button" class="btn btn-default pull-right">Original paper</button>
     </a></h1>
 
     <h4>Author: <%- article.author %></h4>
     <br>
 
+    <img src=<%- article.image %> style="width:250px" align="middle">
+
     <% for(var i=0; i<article.descriptions.length; i++) { %>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title"><%- article.descriptions[i].title %></h3>
         </div>
-      <div class="panel-body">  
+      <div class="panel-body">
         <%- article.descriptions[i].content %>
       </div>
     </div>
     <% } %>
 
-    
+
     <br>
     <br>
     <br>
@@ -40,7 +42,7 @@
             <div class="form-group">
               <label>Summary</label>
               <p>Enter a brief summary and your thoughts on the paper</p>
-              
+
               <textarea class="form-control" rows="4" ng-model="description"></textarea>
             </div>
 
