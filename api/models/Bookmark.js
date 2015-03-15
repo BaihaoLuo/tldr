@@ -3,12 +3,11 @@ module.exports = {
 
   attributes: {
     user: {
-      type: "string",
+      model: "user",
       required: true,
-      unique: true
     },
     article: {
-      type: "string",
+      model: "article",
       required: true
     },
   }

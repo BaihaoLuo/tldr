@@ -5,23 +5,21 @@
  * @help        :: See http://links.sailsjs.org/docs/controllers
  */
 
-var bookmark = {}
 
 module.exports = {
 
 	bookmark:function(req, res) {
-		var user = User;
-    var article = Article;
+		var articleId = req.param("id");
+		var userId = req.session.user.id;
 
-		user.findOne.exec (function (error, user, article) {
+		Bookmark.create({user: userId, article: articleId}).exec(function (error, bookmark) {
 			if (error) {
 				console.log(error);
 				return res.send(400, error);
 			}
 			else {
-				bookmark[key(article)];
-				console.log("Sucessfully bookmarked");
-				return res.send(article);
+				res.redirect("/article/" + articleId);
 			}
-		})}
-};
+		});
+}
+}
