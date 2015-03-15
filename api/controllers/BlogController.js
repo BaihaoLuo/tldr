@@ -22,7 +22,7 @@ module.exports = {
 
 	getAllBlogs: function(req, res){
 		var user = req.session.user;
-		Blog.find({}).exec(function(error, blogs) {
+		Blog.find({}).populate("user").exec(function(error, blogs) {
 			if(error) {
 				console.log(error);
 				res.send(500, error);
@@ -44,7 +44,7 @@ module.exports = {
 			} else {
 
 				// now get all blogs
-				Blog.find({}).exec(function(error, blogs) {
+				Blog.find({}).populate("user").exec(function(error, blogs) {
 					if(error) {
 						console.log(error);
 						res.send(500, error);
