@@ -38,10 +38,6 @@
   color: #fff;
 }
 
-.navbar-nav>li>a:hover {
-  background: #000;
-}
-
 .nav-stacked>li>a {
   color: #fff;
 }
@@ -58,11 +54,12 @@
   padding-left: 2em;
 }
 
-<<<<<<< HEAD
+
 .hotarticle{
   height:100%;
   background: red;
-=======
+}
+
 div.mainmenu {
     z-index: 1;
 }
@@ -103,6 +100,5 @@ div.popup div, div.popup a {
 }
 
 .mainmenu>div:hover {
-  color: #BCEBE2;
->>>>>>> 5d2b56361ff40202fa4ff2db10a8f6c59f73b751
+  color: #BCEBE2
 }
