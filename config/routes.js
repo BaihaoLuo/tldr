@@ -34,13 +34,12 @@ module.exports.routes = {
 
   '/': 'BlogController.getAllArticlesAndBlogs',
 
-  '/about': {
-    view: 'about'
-  },
+  'get /about': { view: 'about' },
+  
   '/articles': 'ArticleController.getAllArticles',
   'get /login': 'UserController.login',
   'post /login': 'UserController.postLogin',
-
+  'get /logout': 'UserController.logout',
   'get /register': 'UserController.register',
   'post /register': 'UserController.postRegister',
 

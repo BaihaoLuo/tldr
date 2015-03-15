@@ -62,7 +62,7 @@
             </li>
             <li>
               <a href="#hot" style="color: #fff;" onMouseOver="this.style.backgroundColor='#13967c'"
-              onMouseOut="this.style.backgroundColor='#15a98c'">Hot</a>
+              onMouseOut="this.style.backgroundColor='#15a98c'">Trending</a>
             </li>
             <li>
               <a href="#bookmarks" style="color: #fff;" onMouseOver="this.style.backgroundColor='#13967c'"
@@ -87,7 +87,7 @@
               onMouseOut="this.style.backgroundColor='#15a98c'">Add Blog</a>
             </li>
             <li>
-              <a href="#about" style="color: #fff;" onMouseOver="this.style.backgroundColor='#13967c'"
+              <a href="/about" style="color: #fff;" onMouseOver="this.style.backgroundColor='#13967c'"
               onMouseOut="this.style.backgroundColor='#15a98c'">About</a>
             </li>
             <li>
@@ -99,7 +99,7 @@
                     <div><%- req.session.user.email %></div>
                     <div class="popup">
                       <div ng-controller="loginController">
-                        <a href="logout()">Logout</a>
+                        <a href="/logout">Logout</a>
                       </div>
                     </div>
                   </div>
@@ -157,6 +157,10 @@
     </div>
 
   </div>
+
+
+
+  
 
 
     <!--
