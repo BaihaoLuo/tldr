@@ -7,9 +7,13 @@
     </a></h1>
 
     <h4>Author: <%- article.author %></h4>
-    <br>
 
+    <br>
     <img src=<%- article.image %> style="width:250px" align="middle">
+
+
+    <hr>
+    <h4>Summaries:</h4>
 
     <% for(var i=0; i<article.descriptions.length; i++) { %>
     <div class="panel panel-default">
@@ -27,6 +31,8 @@
     <br>
     <br>
 
+
+    <hr>
     <div class="col-md-15">
       <div class="panel panel-default">
         <div class="panel-heading" style="background:#46c9af">
