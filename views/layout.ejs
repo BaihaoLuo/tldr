@@ -86,7 +86,16 @@
               <% if (req.session.user == null) { %>
                 <a href="/login"><span class="btnS">Sign In</span></a>
               <% } else { %>
-                <%- req.session.user.email %>
+                <div class="mainmenu" id="mainmenu">
+                  <div class="menu">
+                    <div><%- req.session.user.email %></div>
+                    <div class="popup">
+                      <div ng-controller="loginController">
+                        <a href="logout()">Logout</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               <% } %>
             </li>
           </ul>
@@ -105,13 +114,29 @@
 
 
 
-      <div class="navigation col-md-3 left" style="height: 100%; padding: 0; margin: 0; background: #46c9af;">
+      <div class="navigation col-md-3 left" style="height: 100%; padding: 0; margin: 0; background: #46c9af;"
+      ng-controller="categoryController">
         <p>&nbsp;</p>
-      <ul class="nav nav-stacked" id="sidebar">
-        <li class="side"><a href="#sec0">Physics</a></li>
-        <li class="side"><a href="#sec1">Chemistry</a></li>
-        <li class="side"><a href="#sec2">Biology</a></li>
-        <li class="side"><a href="#sec3">Earth and Ocean Sciences</a></li>
+      <ul class="nav nav-stacked" id="sidebar" style="padding-left: 0.9em;">
+        <div ng-controller="categoryController">
+
+<div class="col-md-12">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form>
+        <div class="form-group">
+          <label>Category Name</label>
+          <input class="form-control" ng-model="categoryTitle"></input>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-default pull-right" ng-click="submit()">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</div>
       </ul>
     </div>
     </div>
