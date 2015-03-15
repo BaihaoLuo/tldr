@@ -31,6 +31,10 @@ module.exports = {
     descriptions: {
       collection: "description",
       via: "article"
+    },
+    image: {
+      type: "string",
+      required: false
     }
   }
 

@@ -15,6 +15,7 @@ module.exports = {
 		var title = req.param("title");
 		var link = req.param("link");
 		var author = req.param("author");
+		var image = req.param("image");
 
 		var descriptionTitle = req.param("descriptionTitle");
 		var description = req.param("description");
@@ -22,7 +23,8 @@ module.exports = {
 		Article.create({
 			title: title,
 			author: author,
-			link: link}).exec(function(error, article) {
+			link: link,
+			image: image}).exec(function(error, article) {
 			if(error){
 				console.log(error);
 				return res.send(400, error);
