@@ -18,6 +18,7 @@ module.exports = {
 				return res.send(400, error);
 			}
 			else {
+				console.log("Bookmark successfully created");
 				res.redirect("/article/" + articleId);
 			}
 		});
