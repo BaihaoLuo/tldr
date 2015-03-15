@@ -7,6 +7,7 @@ app.controller("newArticleController", function($scope, $http) {
         link: $scope.link,
         author: $scope.author,
         image: $scope.image,
+        text: $scope.text,
         descriptionTitle: $scope.descriptionTitle,
         description: $scope.description
       }).success(function(response) {

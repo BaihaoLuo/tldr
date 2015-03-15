@@ -32,9 +32,15 @@ module.exports = {
       collection: "description",
       via: "article"
     },
+
     image: {
       type: "string",
       required: false
+    },
+
+    text: {
+      type: "text",
+      required: true
     }
   }
 

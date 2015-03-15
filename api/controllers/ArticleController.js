@@ -7,13 +7,17 @@
 
 module.exports = {
 
+
 	newArticle: function(req, res) {
 		return res.view("newArticle", {});
 	},
 
 	postNewArticle: function(req, res) {
+
 		var title = req.param("title");
 		var link = req.param("link");
+		var text = req.param("text");
+
 		var author = req.param("author");
 		var image = req.param("image");
 
@@ -24,12 +28,42 @@ module.exports = {
 			title: title,
 			author: author,
 			link: link,
-			image: image}).exec(function(error, article) {
+			image: image,
+			text: text}).exec(function(error, article) {
 			if(error){
 				console.log(error);
 				return res.send(400, error);
 			} else {
 				console.log("Article successfully created");
+
+				var sys = require('sys')
+				var exec = require('child_process').exec;
+				var child;
+
+				// executes `pwd`
+				child = exec("python test.py " + " \"" + title + "\" \"" + String(text) + "\"", function (error, stdout, stderr) {
+					sys.print("python test.py " + title + " " + String(text)+ "\n");
+					sys.print('stdout: ' + stdout);
+					sys.print('stderr: ' + stderr);
+					if (error !== null) {
+						console.log('exec error: ' + error);
+					}
+
+					Description.create({
+						article: article.id,
+						title: "summary",
+						content: stdout})
+					.exec(function(error, description) {
+						if(error) {
+							console.log(error);
+							return res.send(400, error);
+						} else {
+							console.log("Generated description successfully created");
+							return res.send(article);
+						}
+					})
+
+				});
 
 				// now create the descriptions
 				Description.create({
@@ -39,10 +73,9 @@ module.exports = {
 				.exec(function(error, description) {
 					if(error) {
 						console.log(error);
-						return res.send(400, error);
 					} else {
 						console.log("Description successfully created");
-						return res.send(article);
+
 					}
 				})
 

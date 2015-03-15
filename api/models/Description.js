@@ -9,7 +9,7 @@ module.exports = {
 
   attributes: {
     content: {
-      type: "string",
+      type: "text",
       required: true
     },
     article: {
