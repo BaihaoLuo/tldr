@@ -14,10 +14,12 @@
          <%- blogs[i].updatedAt.toLocaleString() %>
        </div>
        <div style="clear: both;"></div>
-
+    <% if(blogs[i].image !== null){ %>
        <div style="float: left">
          <img src=<%- blogs[i].image %> style="width:480px;height:250px">
         </div>
+    <% } %>
+
         <div style="clear: both;"></div>
 
          <div style="float: left; font-size:25px; color:black">
