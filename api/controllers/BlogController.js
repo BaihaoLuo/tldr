@@ -68,7 +68,7 @@ module.exports = {
 	postNewBlog: function(req, res) {
 		var title = req.param("title");
 		var content = req.param("content");
-
+		var image = req.param("image");
 		var sources = req.param("sources");
 
 		console.log(req.session.user);
@@ -76,7 +76,8 @@ module.exports = {
 		Blog.create({
 			title: title,
 			content: content,
-			user: req.session.user.id
+			user: req.session.user.id,
+			image: image
 		}).exec(function(error, blog) {
 			if(error){
 				console.log(error);

@@ -10,7 +10,8 @@ app.controller("newBlogController", function($scope, $http) {
       $http.post("/newBlog", {
         title: $scope.title,
         content: $scope.content,
-        sources: blogSourceIds
+        sources: blogSourceIds,
+        image: $scope.image
       }).success(function(response) {
         console.log(response);
         location.href = "/blog/" + response.id;
