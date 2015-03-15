@@ -4,7 +4,7 @@ app.controller("newBlogController", function($scope, $http) {
 
       var blogSources = $scope.blogSources;
       var blogSourceIds = blogSources.map(function(article) {
-        result article.id;
+        return article.id;
       });
 
       $http.post("/newBlog", {
