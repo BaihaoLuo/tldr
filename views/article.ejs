@@ -8,8 +8,11 @@
 
     <h4>Author: <%- article.author %></h4>
 
-    <br>
-    <img src="<%- article.image %>" style="width:250px" align="middle">
+    <% if(article.image !== null){ %>
+      <br>
+      <img src="<%- article.image %>" style="width:250px" align="middle">
+    <% } %>
+
     <hr>
 
     <% for(var i=0; i<article.descriptions.length; i++) { %>
