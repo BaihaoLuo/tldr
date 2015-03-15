@@ -12,7 +12,7 @@ module.exports = {
     user: {
       model:"user",
       required: true
-    }
+    },
     updatedAt: {
       type: "date",
       required: false
